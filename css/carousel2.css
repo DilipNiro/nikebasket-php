@@ -1,0 +1,432 @@
+.carousel-container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.carousel {
+	position: relative;
+	overflow: hidden;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	margin-bottom: 20px;
+	height: 500px;
+	background-color: #f8f9fa;
+}
+
+.carousel-slide {
+	display: none;
+	text-align: center;
+	position: relative;
+	height: 100%;
+}
+
+.carousel-slide.active {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.carousel-slide img {
+	max-width: 100%;
+	max-height: 450px;
+	width: auto;
+	height: auto;
+	object-fit: contain;
+}
+
+.carousel-nav {
+	text-align: center;
+	margin: 10px 0;
+}
+
+.carousel-nav button {
+	background: #007bff;
+	color: white;
+	border: none;
+	padding: 8px 16px;
+	margin: 0 5px;
+	cursor: pointer;
+	border-radius: 4px;
+	transition: background-color 0.3s ease;
+}
+
+.carousel-nav button:hover {
+	background: #0056b3;
+}
+
+.delete-form {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 2;
+}
+
+.delete-btn {
+	background: #dc3545;
+	color: white;
+	border: none;
+	padding: 5px 10px;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+	background: #c82333;
+}
+
+.slide-number {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	background: rgba(0, 0, 0, 0.5);
+	color: white;
+	padding: 5px 10px;
+	border-radius: 4px;
+	z-index: 2;
+}
+
+.message {
+	padding: 10px;
+	border-radius: 4px;
+	margin-bottom: 15px;
+}
+
+.message.success {
+	background: #d4edda;
+	color: #155724;
+	border: 1px solid #c3e6cb;
+}
+
+.message.error {
+	background: #f8d7da;
+	color: #721c24;
+	border: 1px solid #f5c6cb;
+}
+
+.controls {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.btn {
+	display: inline-block;
+	padding: 10px 20px;
+	background: #007bff;
+	color: white;
+	text-decoration: none;
+	border-radius: 4px;
+	margin: 5px;
+	transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+	background: #0056b3;
+	text-decoration: none;
+	color: white;
+}
+
+/* Ajout d'animations */
+.carousel-slide {
+	transition: opacity 0.3s ease-in-out;
+}
+
+.carousel-slide.active {
+	opacity: 1;
+}
+
+.carousel-slide:not(.active) {
+	opacity: 0;
+}
+
+/* Popup pour afficher le panier */
+#cart-modal {
+	display: none;
+	/* Masquer la popup par défaut */
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	/* Fond semi-transparent */
+}
+
+.cart-popup-content {
+	background-color: white;
+	color: #111;
+	margin: 15% auto;
+	padding: 20px;
+	width: 400px;
+	border-radius: 10px;
+	text-align: center;
+
+}
+
+#cart-items {
+	text-align: left;
+	margin-bottom: 20px;
+
+}
+
+#cart-items p {
+	margin: 10px 0;
+
+}
+
+.cart-item-image {
+	max-width: 100px;
+}
+
+/* NEW NIRO */
+.cart-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 0;
+	border-bottom: 1px solid #ddd;
+	/* Ajout d'une séparation pour chaque item */
+	width: 100%;
+	/* Assurez-vous que chaque élément occupe toute la largeur disponible */
+}
+
+.cart-item img {
+	max-width: 80px;
+	/* Réglez une taille maximale pour l'image */
+	margin-right: 20px;
+	/* Espace entre l'image et le texte */
+}
+
+.cart-item p {
+	flex: 1;
+	/* Les paragraphes prendront le reste de l'espace disponible */
+	margin: 0 10px;
+	/* Un peu d'espace entre les éléments */
+}
+
+.cart-item form {
+	flex-shrink: 0;
+	/* Empêche le bouton de rétrécir */
+}
+
+.cart-buttons {
+	display: flex;
+	justify-content: space-between;
+	/* Répartit l'espace entre les boutons */
+	margin-top: 20px;
+	/* Espacement au-dessus des boutons */
+}
+
+.cart-buttons form {
+	flex: 1;
+	/* Les formulaires prendront chacun la moitié de l'espace */
+	margin-right: 10px;
+	/* Espacement entre les boutons */
+}
+
+.cart-buttons form:last-child {
+	margin-right: 0;
+	/* Pas d'espacement pour le dernier bouton */
+}
+
+.cart-buttons button {
+	width: 100%;
+	/* Les boutons occupent tout l'espace disponible */
+	background-color: #333;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: background-color 0.3s ease;
+}
+
+.cart-buttons button:hover {
+	background-color: #555;
+}
+
+
+/* END NIRO */
+
+#checkout {
+	background-color: #333;
+	color: white;
+	padding: 10px 20px;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+
+/* Ajout d'un conteneur pour l'icône de compte et de panier */
+.account-cart {
+	display: flex;
+	/* Flexbox pour aligner l'icône du compte et du panier côte à côte */
+	align-items: center;
+	/* Centrage vertical */
+}
+
+/* Style de la section du compte */
+.account {
+	display: flex;
+	/* Flexbox pour aligner l'icône et le nom/lien côte à côte */
+	align-items: center;
+	/* Centrage vertical */
+	margin-right: 10px;
+	/* Réduire l'espace entre l'icône du compte et le panier */
+	position: relative;
+	/* Nécessaire pour positionner le sous-menu */
+	cursor: pointer;
+	/* Le curseur devient un pointeur pour indiquer que l'icône est cliquable */
+}
+
+/* Icône du compte utilisateur */
+.account img {
+	width: 45px;
+	/* Taille de l'icône du compte */
+	height: 45px;
+	margin-right: 10px;
+	/* Espacement entre l'icône et le texte (nom ou lien) */
+}
+
+/* Texte ou lien du compte utilisateur */
+.account a,
+.account span {
+	color: white;
+	/* Couleur blanche pour le texte */
+	font-weight: bold;
+	/* Texte en gras */
+	text-decoration: none;
+	/* Supprimer la sous-ligne pour le lien */
+}
+
+/* Effet au survol pour le lien "Se connecter" */
+.account a:hover {
+	text-decoration: underline;
+	/* Soulignement au survol */
+}
+
+/* Sous-menu pour le compte */
+.account-dropdown {
+	display: none;
+	/* Masqué par défaut */
+	position: absolute;
+	/* Position absolue pour placer le menu sous l'icône */
+	top: 50px;
+	/* Ajuster pour que le menu soit juste sous l'icône */
+	right: 0;
+	/* Aligner à droite de l'icône */
+	background-color: white;
+	/* Fond blanc pour le sous-menu */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	/* Ombre légère */
+	border-radius: 5px;
+	/* Bords arrondis pour un aspect plus agréable */
+	z-index: 1000;
+	/* Assurez-vous que le menu apparaît par-dessus le reste */
+	width: 200px;
+	/* Largeur du sous-menu */
+}
+
+/* Style des éléments du sous-menu */
+.account-dropdown ul {
+	list-style-type: none;
+	/* Retirer les puces des éléments de la liste */
+	margin: 0;
+	/* Supprimer les marges par défaut */
+	padding: 0;
+	/* Supprimer les espacements internes par défaut */
+}
+
+.account-dropdown ul li {
+	padding: 10px;
+	/* Espacement interne des éléments du menu */
+	border-bottom: 1px solid #ddd;
+	/* Bordure pour séparer les éléments */
+}
+
+.account-dropdown ul li:last-child {
+	border-bottom: none;
+	/* Pas de bordure pour le dernier élément */
+}
+
+/* Style des liens dans le sous-menu */
+.account-dropdown ul li a {
+	text-decoration: none;
+	/* Supprimer la sous-ligne */
+	color: #333;
+	/* Couleur du texte */
+	display: block;
+	/* Chaque lien occupe toute la largeur de l'élément */
+}
+
+.account-dropdown ul li a:hover {
+	background-color: #f7f7f7;
+	/* Changer le fond au survol */
+	color: #000;
+	/* Changer la couleur du texte au survol */
+}
+
+/* Montrer le sous-menu quand actif */
+.account-dropdown.show {
+	display: block;
+	/* Affiche le menu quand la classe 'show' est ajoutée */
+}
+
+/* Style du produit en rupture de stock */
+/* Style du produit en rupture de stock */
+.product.out-of-stock {
+	position: relative;
+	opacity: 0.5;
+	/* Rendre l'image plus transparente */
+	filter: grayscale(100%);
+	/* Appliquer un filtre gris */
+	pointer-events: none;
+	/* Désactiver les interactions sur le produit */
+}
+
+/* Superposition pour afficher "Rupture de stock" au centre */
+.product.out-of-stock::before {
+	content: "Rupture de stock";
+	/* Texte affiché */
+	position: absolute;
+	top: 50%;
+	/* Centrage vertical */
+	left: 50%;
+	/* Centrage horizontal */
+	transform: translate(-50%, -50%);
+	/* Ajustement pour un vrai centrage */
+	background-color: rgba(255, 0, 0, 0.9);
+	/* Fond rouge plus opaque */
+	color: white;
+	/* Couleur du texte */
+	font-size: 24px;
+	/* Taille de la police plus grande */
+	font-weight: bold;
+	/* Épaisseur de la police */
+	padding: 15px 30px;
+	/* Espacement autour du texte */
+	text-align: center;
+	z-index: 10;
+	/* Placer le texte au-dessus de l'image */
+	border-radius: 5px;
+	/* Arrondir les bords du fond */
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+	/* Ombre pour un effet de profondeur */
+}
+
+/* Désactiver les boutons (ex. : Ajouter au panier) */
+.product.out-of-stock button {
+	pointer-events: none;
+	/* Désactive le bouton */
+	opacity: 0.5;
+	/* Rendre le bouton transparent */
+}
+
+/* Style du texte "Rupture de stock" */
+.out-of-stock-label {
+	display: none;
+	/* Masquer ce texte si déjà utilisé */
+}

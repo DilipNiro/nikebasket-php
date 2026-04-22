@@ -1,0 +1,786 @@
+/* Reset et styles globaux */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Layout principal */
+.container {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: #1c1c1c;
+    padding: 20px;
+    color: white;
+    height: 100%;
+    position: fixed;
+}
+
+.sidebar h2 {
+    margin-bottom: 30px;
+    font-size: 22px;
+    color: #f4f4f4;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+    color: #f4f4f4;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    background-color: #333333;
+}
+
+.logout-btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #c0392b;
+}
+
+/* Contenu principal */
+.main-content {
+    flex: 1;
+    padding: 40px;
+    margin-left: 250px;
+    background-color: white;
+}
+
+/* Section des commandes */
+.commande-detail {
+    background: white;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Titres */
+h1 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #444;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Sections d'information */
+.info-section,
+.products-section,
+.historique-section {
+    background: white;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Grille d'information */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.info-item {
+    margin-bottom: 15px;
+}
+
+.info-item label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+/* Address block */
+.address-block {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 6px;
+    margin-top: 5px;
+}
+
+.address-block p {
+    margin: 5px 0;
+}
+
+/* Produits */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.product-card {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    background: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.product-info {
+    flex: 1;
+}
+
+.product-info h3 {
+    margin: 0 0 10px 0;
+    font-size: 16px;
+}
+
+.product-details,
+.product-quantity,
+.product-price,
+.product-total {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.product-total {
+    font-weight: 600;
+    color: #333;
+}
+
+/* Timeline historique */
+.historique-timeline {
+    margin-top: 30px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateX(5px);
+}
+
+.timeline-status {
+    margin-bottom: 15px;
+}
+
+.timeline-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #666;
+    font-size: 14px;
+}
+
+.timeline-date {
+    background: #e9ecef;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 13px;
+}
+
+.timeline-user:before {
+    content: '👤';
+    margin-right: 5px;
+}
+
+/* Badges de statut */
+.statut-badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    display: inline-block;
+}
+
+.statut-en_attente {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.statut-payee {
+    background: #d4edda;
+    color: #155724;
+}
+
+.statut-en_preparation {
+    background: #cce5ff;
+    color: #004085;
+}
+
+.statut-expediee {
+    background: #e2e3e5;
+    color: #383d41;
+}
+
+.statut-livree {
+    background: #d4edda;
+    color: #155724;
+}
+
+.statut-annulee {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+/* Boutons */
+.actions-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #dee2e6;
+}
+
+.btn-back {
+    background: #6c757d;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.btn-back:hover {
+    background: #5a6268;
+    transform: translateX(-5px);
+}
+
+.btn-update {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-update:hover {
+    background: #218838;
+    transform: translateY(-2px);
+}
+
+/* Totaux */
+.order-total {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px solid #eee;
+}
+
+.total-details {
+    text-align: right;
+    font-size: 16px;
+}
+
+.total-details p {
+    margin: 10px 0;
+}
+
+.grand-total {
+    font-size: 20px;
+    font-weight: bold;
+    color: #000;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+}
+
+/* Liste des commandes */
+.commandes-list {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.commandes-list table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+}
+
+.commandes-list th,
+.commandes-list td {
+    padding: 15px;
+    border: 1px solid #dee2e6;
+    text-align: left;
+}
+
+.commandes-list th {
+    background: #f8f9fa;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Filtres */
+.filters {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.filters form {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.filters select,
+.filters input {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    min-width: 200px;
+}
+
+.filters button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filters .reset-btn {
+    background: #dc3545;
+    color: white;
+}
+
+.filters .reset-btn:hover {
+    background: #c82333;
+}
+
+/* Media queries */
+@media (max-width: 1024px) {
+    .main-content {
+        padding: 20px;
+    }
+
+    .product-card {
+        flex-direction: column;
+    }
+
+    .product-image {
+        width: 100%;
+        height: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .filters form {
+        flex-direction: column;
+    }
+
+    .filters select,
+    .filters input {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .actions-section {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .btn-back,
+    .btn-update {
+        width: 100%;
+        text-align: center;
+    }
+
+    .commandes-list {
+        overflow-x: auto;
+    }
+}
+
+/* Animation pour le timeline */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.timeline-item {
+    animation: slideIn 0.5s ease-out forwards;
+}
+
+/* Styles communs pour tous les boutons */
+.btn, 
+.btn-detail, 
+.btn-update,
+.btn-edit,
+.btn-delete,
+.delete-btn,
+.edit-btn,
+.detail-btn
+ {
+    display: inline-block;
+    padding: 8px 16px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none;
+    border: none;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+
+.reset-btn{
+    background-color:red;
+    color: white;
+    padding: 5px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+/* Bouton éditer */
+.btn-edit,
+.edit-btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-edit:hover,
+.edit-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Bouton supprimer */
+.btn-delete,
+.delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-delete:hover,
+.delete-btn:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+/* Bouton détail */
+.btn-detail,
+.detail-btn {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btn-detail:hover,
+.detail-btn:hover {
+    background-color: #138496;
+    transform: translateY(-2px);
+}
+
+/* Bouton mettre à jour */
+.btn-update {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-update:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+/* Boutons dans les formulaires */
+form button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form button[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Boutons de filtre */
+.filters button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filters button:hover {
+    background-color: #0056b3;
+}
+
+.filters .reset-btn {
+    background-color: #dc3545;
+    color: white;
+}
+
+.filters .reset-btn:hover {
+    background-color: #c82333;
+}
+
+/* Style pour les groupes de boutons */
+.button-group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Styles pour les boutons désactivés */
+.btn:disabled,
+button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+/* Boutons dans la modal */
+.modal-content button {
+    min-width: 100px;
+}
+
+.modal-content select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+/* Responsive design pour les boutons */
+@media (max-width: 768px) {
+    .button-group {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn, 
+    .btn-detail, 
+    .btn-update,
+    .btn-edit,
+    .btn-delete,
+    .delete-btn,
+    .edit-btn,
+    .detail-btn
+    .reset-btn {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
+
+.cart-item-price {
+    margin: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.price-original {
+    text-decoration: line-through;
+    color: #999;
+    font-size: 0.95em;
+    position: relative;
+}
+
+.price-promo {
+    color: #000;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.reduction-badge {
+    background-color: #ff4444;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+.product-item {
+    display: flex;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    background-color: #fff;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.product-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.product-details {
+    flex: 1;
+}
+
+.product-details h4 {
+    margin: 0 0 10px 0;
+    color: #333;
+}
+
+.product-details p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.order-total {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.order-total p {
+    margin: 5px 0;
+}
+
+.order-total .total {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #dee2e6;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    background-color: #333;
+    transform: translateX(5px);
+}

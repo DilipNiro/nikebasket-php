@@ -1,0 +1,17 @@
+# Dépendances PHP
+vendor/
+
+# Variables d'environnement (NE JAMAIS COMMITER)
+.env
+config/.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log

@@ -1,0 +1,140 @@
+/* Style général pour le formulaire */
+form {
+	width: 400px;
+	/* Largeur fixe pour le formulaire */
+	margin: 50px auto;
+	/* Centre le formulaire horizontalement */
+	padding: 20px;
+	/* Espacement intérieur */
+	border: 1px solid #ddd;
+	/* Bord gris clair */
+	border-radius: 10px;
+	/* Coins arrondis */
+	background-color: #f9f9f9;
+	/* Fond gris très clair */
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	/* Ombre légère */
+}
+
+/* Style pour les labels */
+form label {
+	display: block;
+	/* Chaque label sur une nouvelle ligne */
+	font-size: 14px;
+	/* Taille de police des labels */
+	color: #333;
+	/* Couleur du texte */
+	margin-bottom: 5px;
+	/* Espace en dessous du label */
+}
+
+/* Style pour les champs de texte, les inputs, et les textarea */
+form input[type="text"],
+form input[type="number"],
+form input[type="file"],
+form textarea {
+	width: 100%;
+	/* Prend toute la largeur disponible */
+	padding: 10px;
+	/* Espacement intérieur */
+	margin-bottom: 15px;
+	/* Espace en bas des champs */
+	border: 1px solid #ccc;
+	/* Bord gris */
+	border-radius: 5px;
+	/* Coins arrondis */
+	font-size: 14px;
+	/* Taille de police */
+	box-sizing: border-box;
+	/* Inclut padding et bord dans la largeur totale */
+	background-color: #fff;
+	/* Fond blanc pour les champs */
+	color: #333;
+	/* Couleur du texte */
+	transition: border-color 0.3s ease;
+	/* Transition pour la couleur de bord */
+}
+
+/* Ajouter un effet de survol pour les champs */
+form input[type="text"]:focus,
+form input[type="number"]:focus,
+form textarea:focus {
+	border-color: #333;
+	/* Changer la couleur de bord au focus */
+	outline: none;
+	/* Supprimer le contour par défaut */
+}
+
+/* Style pour le bouton de soumission */
+form input[type="submit"] {
+	width: 100%;
+	/* Prend toute la largeur disponible */
+	padding: 10px;
+	/* Espacement intérieur */
+	background-color: #333;
+	/* Couleur de fond du bouton */
+	color: white;
+	/* Couleur du texte */
+	border: none;
+	/* Supprimer la bordure par défaut */
+	border-radius: 5px;
+	/* Coins arrondis */
+	cursor: pointer;
+	/* Curseur en main */
+	font-size: 16px;
+	/* Taille de police du bouton */
+	font-weight: bold;
+	/* Gras pour le texte */
+	transition: background-color 0.3s ease;
+	/* Transition pour le changement de couleur */
+}
+
+/* Effet de survol pour le bouton de soumission */
+form input[type="submit"]:hover {
+	background-color: #1c1c1c;
+	/* Couleur plus foncée au survol */
+}
+
+/* Style pour les textarea */
+form textarea {
+	height: 100px;
+	/* Hauteur fixe pour le textarea */
+	resize: vertical;
+	/* Autoriser la redimension verticale */
+}
+
+/* Style pour les champs de fichier */
+form input[type="file"] {
+	padding: 5px;
+	/* Espacement pour les champs de fichier */
+}
+
+/* Style pour les messages d'erreur ou de succès */
+form .message {
+	font-size: 14px;
+	/* Taille de police pour les messages */
+	margin-bottom: 15px;
+	/* Espace en bas */
+	padding: 10px;
+	/* Espacement intérieur */
+	border-radius: 5px;
+	/* Coins arrondis */
+}
+
+form .success {
+	color: #28a745;
+	/* Couleur de texte pour le succès */
+	background-color: #d4edda;
+	/* Fond vert très clair */
+	border: 1px solid #c3e6cb;
+	/* Bord vert clair */
+}
+
+form .error {
+	color: #dc3545;
+	/* Couleur de texte pour les erreurs */
+	background-color: #f8d7da;
+	/* Fond rouge très clair */
+	border: 1px solid #f5c6cb;
+	/* Bord rouge clair */
+}
